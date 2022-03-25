@@ -1,0 +1,4 @@
+res://editor.tscn
+res://scripts/code_translator.gd
+res://scripts/stored.gd
+res://themes/editortheme.tres

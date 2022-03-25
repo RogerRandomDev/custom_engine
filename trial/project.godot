@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.0", "Vulkan Clustered")
 [autoload]
 
 RUN="*res://scripts/code_translator.gd"
+data="*res://scripts/stored.gd"
 
 [display]
 
@@ -26,3 +27,16 @@ window/size/viewport_height=128
 window/size/window_width_override=1024
 window/size/window_height_override=600
 window/stretch/mode="viewport"
+
+[input]
+
+l_mouse={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"store_command":true,"alt_pressed":false,"shift_pressed":false,"meta_pressed":false,"command_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"pressed":false,"double_click":false,"script":null)
+]
+}
+r_mouse={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"store_command":true,"alt_pressed":false,"shift_pressed":false,"meta_pressed":false,"command_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"pressed":false,"double_click":false,"script":null)
+]
+}

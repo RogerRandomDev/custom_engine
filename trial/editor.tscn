@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnpil88f4h2g7"]
+[gd_scene load_steps=7 format=3 uid="uid://cnpil88f4h2g7"]
 
 [ext_resource type="Script" path="res://scripts/editor.gd" id="1_ldpko"]
 [ext_resource type="Theme" uid="uid://b2l1b1w3wxlhh" path="res://themes/editortheme.tres" id="2_2k6ma"]
@@ -6,28 +6,39 @@
 [ext_resource type="Script" path="res://scripts/Art.gd" id="4_0qjc0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1hh1"]
-bg_color = Color(0.25098, 0.372549, 0.717647, 1)
+bg_color = Color(1, 1, 1, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
-border_color = Color(0.113725, 0.168627, 0.32549, 1)
+border_color = Color(0.376471, 0.376471, 0.376471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ddlcs"]
+bg_color = Color(1, 0.945098, 0.909804, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
 
 [node name="editor" type="Node2D"]
 texture_filter = 1
 script = ExtResource( "1_ldpko" )
 
 [node name="TabContainer" type="TabContainer" parent="."]
+top_level = true
 offset_right = 128.0
 offset_bottom = 128.0
 theme = ExtResource( "2_2k6ma" )
 tab_alignment = 0
 
 [node name="Code" type="Control" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 13.0
+offset_left = 1.0
+offset_top = 14.0
+offset_right = -1.0
+offset_bottom = -1.0
 
 [node name="Node2D" type="Node2D" parent="TabContainer/Code"]
 
@@ -49,6 +60,7 @@ __meta__ = {
 }
 
 [node name="Art" type="Control" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1.0
@@ -58,6 +70,7 @@ offset_bottom = -1.0
 script = ExtResource( "4_0qjc0" )
 
 [node name="spritehold" type="Panel" parent="TabContainer/Art"]
+show_behind_parent = true
 offset_top = -1.0
 offset_right = 68.0
 offset_bottom = 67.0
@@ -69,6 +82,7 @@ __meta__ = {
 }
 
 [node name="texture" type="TextureRect" parent="TabContainer/Art/spritehold"]
+texture_filter = 1
 rect_min_size = Vector2(64, 64)
 offset_left = 2.0
 offset_top = 2.0
@@ -82,6 +96,7 @@ __meta__ = {
 }
 
 [node name="colorlist" type="ItemList" parent="TabContainer/Art"]
+show_behind_parent = true
 offset_left = 79.0
 offset_right = 128.0
 offset_bottom = 57.0
@@ -94,3 +109,107 @@ __meta__ = {
 "_edit_layout_mode": 0,
 "_edit_use_custom_anchors": false
 }
+
+[node name="SAVE" type="Button" parent="TabContainer/Art"]
+offset_top = 82.0
+offset_right = 53.0
+offset_bottom = 97.0
+focus_mode = 0
+theme = ExtResource( "2_2k6ma" )
+theme_override_font_sizes/font_size = 8
+text = "save"
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
+
+[node name="NEW" type="Button" parent="TabContainer/Art"]
+offset_top = 67.0
+offset_right = 53.0
+offset_bottom = 82.0
+focus_mode = 0
+theme = ExtResource( "2_2k6ma" )
+theme_override_font_sizes/font_size = 8
+text = "new"
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
+
+[node name="LOAD" type="Button" parent="TabContainer/Art"]
+offset_top = 97.0
+offset_right = 53.0
+offset_bottom = 113.0
+focus_mode = 0
+theme = ExtResource( "2_2k6ma" )
+theme_override_font_sizes/font_size = 8
+text = "load"
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
+
+[node name="choosepanel" type="Panel" parent="TabContainer/Art"]
+visible = false
+offset_left = 7.0
+offset_top = 10.0
+offset_right = 119.0
+offset_bottom = 98.0
+theme = ExtResource( "2_2k6ma" )
+theme_override_styles/panel = SubResource( "StyleBoxFlat_ddlcs" )
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
+
+[node name="name_of" type="LineEdit" parent="TabContainer/Art/choosepanel"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 88.0
+offset_bottom = 29.0
+placeholder_text = "name of"
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
+
+[node name="current_names" type="ItemList" parent="TabContainer/Art/choosepanel"]
+offset_left = 16.0
+offset_top = 29.0
+offset_right = 88.0
+offset_bottom = 72.0
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
+
+[node name="yes" type="Button" parent="TabContainer/Art/choosepanel"]
+rect_min_size = Vector2(48, 12)
+offset_top = 76.0
+offset_right = 48.0
+offset_bottom = 88.0
+text = "confirm"
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
+
+[node name="cancel" type="Button" parent="TabContainer/Art/choosepanel"]
+rect_min_size = Vector2(48, 12)
+offset_left = 64.0
+offset_top = 76.0
+offset_right = 112.0
+offset_bottom = 88.0
+text = "cancel"
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
+
+[connection signal="item_selected" from="TabContainer/Art/colorlist" to="TabContainer/Art" method="_on_colorlist_item_selected"]
+[connection signal="pressed" from="TabContainer/Art/SAVE" to="TabContainer/Art" method="_on_save_pressed"]
+[connection signal="pressed" from="TabContainer/Art/NEW" to="TabContainer/Art" method="_on_new_pressed"]
+[connection signal="pressed" from="TabContainer/Art/LOAD" to="TabContainer/Art" method="_on_load_pressed"]
+[connection signal="item_selected" from="TabContainer/Art/choosepanel/current_names" to="TabContainer/Art" method="_on_current_names_item_selected"]
+[connection signal="pressed" from="TabContainer/Art/choosepanel/yes" to="TabContainer/Art" method="_on_yes_pressed"]
+[connection signal="pressed" from="TabContainer/Art/choosepanel/cancel" to="TabContainer/Art" method="_on_cancel_pressed"]

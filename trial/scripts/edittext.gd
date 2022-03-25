@@ -12,3 +12,8 @@ func _notification(_what):
 	if get_child_count(true)!=0:
 		get_child(0,true).visible=true
 		get_child(1,true).visible=true
+
+func _input(_event):
+	if Input.is_key_pressed(KEY_ENTER):
+		data.convert_from_string(text)
+		pass
