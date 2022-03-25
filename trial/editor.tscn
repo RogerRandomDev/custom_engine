@@ -7,7 +7,14 @@
 
 [sub_resource type="CodeHighlighter" id="CodeHighlighter_xbu0g"]
 number_color = Color(0.670588, 0.321569, 0.211765, 1)
-function_color = Color(0.160784, 0.678431, 1, 1)
+function_color = Color(0.513726, 0.462745, 0.611765, 1)
+keyword_colors = {
+"const": Color(0.494118, 0.145098, 0.32549, 1),
+"fn": Color(0.513726, 0.462745, 0.611765, 1),
+"int": Color(1, 0.466667, 0.658824, 1),
+"string": Color(1, 0.466667, 0.658824, 1),
+"var": Color(0.494118, 0.145098, 0.32549, 1)
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1hh1"]
 bg_color = Color(1, 1, 1, 1)
@@ -80,7 +87,6 @@ fn _ready():
 fn upd():
 	pass"
 context_menu_enabled = false
-highlight_all_occurrences = true
 draw_tabs = true
 syntax_highlighter = SubResource( "CodeHighlighter_xbu0g" )
 caret_blink = true
