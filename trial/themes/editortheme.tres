@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=13 format=3 uid="uid://b2l1b1w3wxlhh"]
+[gd_resource type="Theme" load_steps=14 format=3 uid="uid://b2l1b1w3wxlhh"]
 
 [ext_resource type="Font" uid="uid://c5kaxabwy3ta0" path="res://font/font.tres" id="1_b4aw4"]
+[ext_resource type="Texture2D" uid="uid://phc2ixuhg560" path="res://textures/editor/tabicon.png" id="2_vjmpw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q67lc"]
 bg_color = Color(0.760784, 0.764706, 0.780392, 1)
@@ -8,6 +9,12 @@ border_width_left = 2
 border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ip6eh"]
+bg_color = Color(0.803922, 0.803922, 0.803922, 1)
+border_width_right = 4
+border_width_bottom = 4
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mp1er"]
@@ -66,12 +73,6 @@ border_width_top = 1
 border_width_right = 1
 border_color = Color(0.372549, 0.341176, 0.309804, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ip6eh"]
-bg_color = Color(0.803922, 0.803922, 0.803922, 1)
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0, 0, 0, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hapkr"]
 bg_color = Color(0.372549, 0.341176, 0.309804, 1)
 border_width_left = 1
@@ -119,6 +120,22 @@ Button/styles/focus = SubResource( "StyleBoxFlat_q67lc" )
 Button/styles/hover = SubResource( "StyleBoxFlat_q67lc" )
 Button/styles/normal = SubResource( "StyleBoxFlat_q67lc" )
 Button/styles/pressed = SubResource( "StyleBoxFlat_q67lc" )
+CodeEdit/colors/background_color = Color(0.372549, 0.341176, 0.309804, 1)
+CodeEdit/colors/executing_line_color = Color(0.98, 0.89, 0.27, 1)
+CodeEdit/colors/line_number_color = Color(1, 0.8, 0.666667, 1)
+CodeEdit/font_sizes/font_size = 5
+CodeEdit/icons/bookmark = null
+CodeEdit/icons/breakpoint = null
+CodeEdit/icons/can_fold = null
+CodeEdit/icons/executing_line = null
+CodeEdit/icons/folded = null
+CodeEdit/icons/folded_eol_icon = null
+CodeEdit/icons/space = null
+CodeEdit/icons/tab = null
+CodeEdit/styles/completion = null
+CodeEdit/styles/focus = SubResource( "StyleBoxFlat_ip6eh" )
+CodeEdit/styles/normal = SubResource( "StyleBoxFlat_ip6eh" )
+CodeEdit/styles/read_only = SubResource( "StyleBoxFlat_ip6eh" )
 HScrollBar/icons/decrement = null
 HScrollBar/icons/decrement_highlight = null
 HScrollBar/icons/decrement_pressed = null
@@ -169,7 +186,7 @@ TabContainer/styles/tab_unselected = SubResource( "StyleBoxFlat_7tkvw" )
 TextEdit/colors/background_color = Color(0.372549, 0.341176, 0.309804, 1)
 TextEdit/colors/caret_background_color = Color(1, 0.8, 0.666667, 1)
 TextEdit/colors/caret_color = Color(1, 0.8, 0.666667, 1)
-TextEdit/colors/current_line_color = Color(0, 0, 0, 1)
+TextEdit/colors/current_line_color = Color(1, 0.8, 0.666667, 1)
 TextEdit/colors/font_color = Color(1, 0.945098, 0.909804, 1)
 TextEdit/colors/font_outline_color = Color(0, 0, 0, 1)
 TextEdit/colors/font_placeholder_color = Color(0, 0, 0, 1)
@@ -179,13 +196,13 @@ TextEdit/colors/search_result_border_color = Color(0, 0, 0, 1)
 TextEdit/colors/search_result_color = Color(0, 0, 0, 1)
 TextEdit/colors/selection_color = Color(1, 0.8, 0.666667, 1)
 TextEdit/colors/word_highlighted_color = Color(1, 0.945098, 0.909804, 1)
-TextEdit/constants/caret_width = 0
-TextEdit/constants/line_spacing = 0
+TextEdit/constants/caret_width = 1
+TextEdit/constants/line_spacing = 1
 TextEdit/constants/outline_size = 0
 TextEdit/font_sizes/font_size = 5
 TextEdit/fonts/font = ExtResource( "1_b4aw4" )
-TextEdit/icons/space = null
-TextEdit/icons/tab = null
+TextEdit/icons/space = ExtResource( "2_vjmpw" )
+TextEdit/icons/tab = ExtResource( "2_vjmpw" )
 TextEdit/styles/focus = SubResource( "StyleBoxFlat_ip6eh" )
 TextEdit/styles/normal = SubResource( "StyleBoxFlat_ip6eh" )
 TextEdit/styles/read_only = SubResource( "StyleBoxFlat_ip6eh" )

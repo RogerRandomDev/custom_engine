@@ -4,3 +4,7 @@ var palette=["#000000","#1D2B53","#7E2553","#008751","#AB5236","#5F574F","#C2C3C
 
 func _ready():
 	RUN.root=$TabContainer
+
+func _process(_delta):
+	if $scriptholder.has_method("_process"):
+		$scriptholder.call("_process",_delta)

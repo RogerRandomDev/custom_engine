@@ -32,7 +32,26 @@ offset_bottom = 128.0
 theme = ExtResource( "2_2k6ma" )
 tab_alignment = 0
 
+[node name="Game" type="Control" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 14.0
+offset_right = -1.0
+offset_bottom = -1.0
+
+[node name="Objects" type="Control" parent="TabContainer/Game"]
+top_level = true
+rect_clip_content = true
+offset_right = 128.0
+offset_bottom = 128.0
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
+
 [node name="Code" type="Control" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1.0
@@ -42,22 +61,39 @@ offset_bottom = -1.0
 
 [node name="Node2D" type="Node2D" parent="TabContainer/Code"]
 
-[node name="edittext" type="TextEdit" parent="TabContainer/Code/Node2D"]
+[node name="CodeEdit" type="CodeEdit" parent="TabContainer/Code/Node2D"]
 texture_filter = 1
-rect_clip_content = true
-rect_min_size = Vector2(128, 115)
-offset_right = 128.0
-offset_bottom = 112.0
-theme = ExtResource( "2_2k6ma" )
-theme_override_colors/caret_color = Color(1, 0.8, 0.666667, 1)
-theme_override_constants/caret_width = 1
+offset_right = 126.0
+offset_bottom = 113.0
+text = "#put globals
+
+#runs in beginning
+fn _ready():
+	pass
+
+#runs every frame
+#20FPS
+fn upd():
+	pass"
 context_menu_enabled = false
-draw_control_chars = true
+draw_tabs = true
 caret_blink = true
+symbol_lookup_on_click = true
+gutters_draw_line_numbers = true
+indent_size = 3
+indent_automatic = true
+auto_brace_completion_enabled = true
+auto_brace_completion_highlight_matching = true
 script = ExtResource( "3_hjcj4" )
-__meta__ = {
-"_edit_use_custom_anchors": false
-}
+
+[node name="runcode" type="Button" parent="TabContainer/Code/Node2D"]
+texture_filter = 1
+offset_left = 95.0
+offset_top = -14.0
+offset_right = 128.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 8
+text = "run"
 
 [node name="Art" type="Control" parent="TabContainer"]
 visible = false
@@ -206,6 +242,9 @@ __meta__ = {
 "_edit_use_custom_anchors": false
 }
 
+[node name="scriptholder" type="Node" parent="."]
+
+[connection signal="pressed" from="TabContainer/Code/Node2D/runcode" to="TabContainer/Code/Node2D/CodeEdit" method="_on_runcode_pressed"]
 [connection signal="item_selected" from="TabContainer/Art/colorlist" to="TabContainer/Art" method="_on_colorlist_item_selected"]
 [connection signal="pressed" from="TabContainer/Art/SAVE" to="TabContainer/Art" method="_on_save_pressed"]
 [connection signal="pressed" from="TabContainer/Art/NEW" to="TabContainer/Art" method="_on_new_pressed"]

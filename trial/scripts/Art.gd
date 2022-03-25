@@ -69,13 +69,13 @@ func _on_cancel_pressed():
 func _on_yes_pressed():
 	var name_of = $choosepanel/name_of.text
 	if saving:
-		print(data.stored.textures)
-		data.add_texture(name_of.to_upper(),img.duplicate(true))
+		data.add_texture(name_of.to_lower(),img.duplicate(true))
 		new_img()
 	else:
 		if !data.get_textures().keys().has(name_of):return
-		tex = data.get_textures()[name_of].duplicate(true)
-		img.create_from_image(tex)
+		img = data.get_textures()[name_of].duplicate(true)
+		tex.create_from_data(8,8,false,Image.FORMAT_RGBA8,img.get_image().get_data())
+		$spritehold/texture.texture=img
 	$choosepanel.visible=false
 
 

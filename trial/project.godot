@@ -8,6 +8,16 @@
 
 config_version=5
 
+_global_script_classes=[{
+"base": "Node",
+"class": &"customs",
+"language": &"GDScript",
+"path": "res://scripts/custom_classes.gd"
+}]
+_global_script_class_icons={
+"customs": ""
+}
+
 [application]
 
 config/name="trial"
@@ -19,6 +29,11 @@ config/features=PackedStringArray("4.0", "Vulkan Clustered")
 
 RUN="*res://scripts/code_translator.gd"
 data="*res://scripts/stored.gd"
+custom="*res://scripts/custom_classes.gd"
+
+[debug]
+
+settings/fps/force_fps=20
 
 [display]
 
