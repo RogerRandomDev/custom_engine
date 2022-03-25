@@ -1,9 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnpil88f4h2g7"]
+[gd_scene load_steps=8 format=3 uid="uid://cnpil88f4h2g7"]
 
 [ext_resource type="Script" path="res://scripts/editor.gd" id="1_ldpko"]
 [ext_resource type="Theme" uid="uid://b2l1b1w3wxlhh" path="res://themes/editortheme.tres" id="2_2k6ma"]
 [ext_resource type="Script" path="res://scripts/edittext.gd" id="3_hjcj4"]
 [ext_resource type="Script" path="res://scripts/Art.gd" id="4_0qjc0"]
+
+[sub_resource type="CodeHighlighter" id="CodeHighlighter_xbu0g"]
+number_color = Color(0.670588, 0.321569, 0.211765, 1)
+function_color = Color(0.160784, 0.678431, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1hh1"]
 bg_color = Color(1, 1, 1, 1)
@@ -33,6 +37,7 @@ theme = ExtResource( "2_2k6ma" )
 tab_alignment = 0
 
 [node name="Game" type="Control" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1.0
@@ -51,7 +56,6 @@ __meta__ = {
 }
 
 [node name="Code" type="Control" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1.0
@@ -76,7 +80,9 @@ fn _ready():
 fn upd():
 	pass"
 context_menu_enabled = false
+highlight_all_occurrences = true
 draw_tabs = true
+syntax_highlighter = SubResource( "CodeHighlighter_xbu0g" )
 caret_blink = true
 symbol_lookup_on_click = true
 gutters_draw_line_numbers = true

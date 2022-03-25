@@ -121,7 +121,6 @@ Button/styles/hover = SubResource( "StyleBoxFlat_q67lc" )
 Button/styles/normal = SubResource( "StyleBoxFlat_q67lc" )
 Button/styles/pressed = SubResource( "StyleBoxFlat_q67lc" )
 CodeEdit/colors/background_color = Color(0.372549, 0.341176, 0.309804, 1)
-CodeEdit/colors/executing_line_color = Color(0.98, 0.89, 0.27, 1)
 CodeEdit/colors/line_number_color = Color(1, 0.8, 0.666667, 1)
 CodeEdit/font_sizes/font_size = 5
 CodeEdit/icons/bookmark = null
