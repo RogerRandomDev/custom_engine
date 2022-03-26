@@ -1,20 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnpil88f4h2g7"]
+[gd_scene load_steps=9 format=3 uid="uid://cnpil88f4h2g7"]
 
 [ext_resource type="Script" path="res://scripts/editor.gd" id="1_ldpko"]
 [ext_resource type="Theme" uid="uid://b2l1b1w3wxlhh" path="res://themes/editortheme.tres" id="2_2k6ma"]
 [ext_resource type="Script" path="res://scripts/edittext.gd" id="3_hjcj4"]
+[ext_resource type="CodeHighlighter" uid="uid://c6snqmeewopwy" path="res://editor.tres" id="3_npd40"]
 [ext_resource type="Script" path="res://scripts/Art.gd" id="4_0qjc0"]
-
-[sub_resource type="CodeHighlighter" id="CodeHighlighter_xbu0g"]
-number_color = Color(0.670588, 0.321569, 0.211765, 1)
-function_color = Color(0.513726, 0.462745, 0.611765, 1)
-keyword_colors = {
-"const": Color(0.494118, 0.145098, 0.32549, 1),
-"fn": Color(0.513726, 0.462745, 0.611765, 1),
-"int": Color(1, 0.466667, 0.658824, 1),
-"string": Color(1, 0.466667, 0.658824, 1),
-"var": Color(0.494118, 0.145098, 0.32549, 1)
-}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1hh1"]
 bg_color = Color(1, 1, 1, 1)
@@ -32,35 +22,19 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06pxl"]
+
 [node name="editor" type="Node2D"]
 texture_filter = 1
 script = ExtResource( "1_ldpko" )
 
 [node name="TabContainer" type="TabContainer" parent="."]
 top_level = true
+texture_filter = 1
 offset_right = 128.0
 offset_bottom = 128.0
 theme = ExtResource( "2_2k6ma" )
 tab_alignment = 0
-
-[node name="Game" type="Control" parent="TabContainer"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 14.0
-offset_right = -1.0
-offset_bottom = -1.0
-
-[node name="Objects" type="Control" parent="TabContainer/Game"]
-top_level = true
-rect_clip_content = true
-offset_right = 128.0
-offset_bottom = 128.0
-__meta__ = {
-"_edit_layout_mode": 0,
-"_edit_use_custom_anchors": false
-}
 
 [node name="Code" type="Control" parent="TabContainer"]
 anchor_right = 1.0
@@ -69,6 +43,7 @@ offset_left = 1.0
 offset_top = 14.0
 offset_right = -1.0
 offset_bottom = -1.0
+mouse_filter = 1
 
 [node name="Node2D" type="Node2D" parent="TabContainer/Code"]
 
@@ -88,7 +63,7 @@ fn upd():
 	pass"
 context_menu_enabled = false
 draw_tabs = true
-syntax_highlighter = SubResource( "CodeHighlighter_xbu0g" )
+syntax_highlighter = ExtResource( "3_npd40" )
 caret_blink = true
 symbol_lookup_on_click = true
 gutters_draw_line_numbers = true
@@ -256,6 +231,42 @@ __meta__ = {
 
 [node name="scriptholder" type="Node" parent="."]
 
+[node name="Game" type="Control" parent="."]
+visible = false
+top_level = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource( "2_2k6ma" )
+__meta__ = {
+"_edit_use_custom_anchors": false
+}
+
+[node name="back" type="Panel" parent="Game"]
+rect_clip_content = true
+offset_right = 128.0
+offset_bottom = 128.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource( "StyleBoxFlat_06pxl" )
+
+[node name="stopcode" type="Button" parent="Game/back"]
+texture_filter = 1
+offset_left = 96.0
+offset_right = 128.0
+offset_bottom = 13.0
+mouse_filter = 1
+text = "stop"
+__meta__ = {
+"_edit_layout_mode": 0,
+"_edit_use_custom_anchors": false
+}
+
+[node name="Objects" type="Node2D" parent="Game"]
+top_level = true
+z_index = 6
+
 [connection signal="pressed" from="TabContainer/Code/Node2D/runcode" to="TabContainer/Code/Node2D/CodeEdit" method="_on_runcode_pressed"]
 [connection signal="item_selected" from="TabContainer/Art/colorlist" to="TabContainer/Art" method="_on_colorlist_item_selected"]
 [connection signal="pressed" from="TabContainer/Art/SAVE" to="TabContainer/Art" method="_on_save_pressed"]
@@ -264,3 +275,4 @@ __meta__ = {
 [connection signal="item_selected" from="TabContainer/Art/choosepanel/current_names" to="TabContainer/Art" method="_on_current_names_item_selected"]
 [connection signal="pressed" from="TabContainer/Art/choosepanel/yes" to="TabContainer/Art" method="_on_yes_pressed"]
 [connection signal="pressed" from="TabContainer/Art/choosepanel/cancel" to="TabContainer/Art" method="_on_cancel_pressed"]
+[connection signal="pressed" from="Game/back/stopcode" to="TabContainer/Code/Node2D/CodeEdit" method="_on_stopcode_pressed"]

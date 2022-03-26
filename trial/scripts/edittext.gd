@@ -16,7 +16,13 @@ func _notification(_what):
 
 
 func _on_runcode_pressed():
-	var base=get_parent().get_parent().get_parent().get_node("Game")
-	for child in base.get_node("Objects").get_children():child.queue_free()
+	var base=get_parent().get_parent().get_parent().get_parent().get_node_or_null("Game")
+	if base!=null:
+		for child in base.get_node("Objects").get_children():child.queue_free()
+	get_parent().get_parent().get_parent().get_parent().get_node("Game").visible=true
 	data.convert_from_string(text)
-	get_parent().get_parent().get_parent().current_tab=0
+
+
+func _on_stopcode_pressed():
+	get_parent().get_parent().get_parent().get_parent().get_node("scriptholder").set_script(null)
+	get_parent().get_parent().get_parent().get_parent().get_node("Game").visible=false

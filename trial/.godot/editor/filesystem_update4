@@ -1,5 +1,5 @@
+res://editor.tres
 res://editor.tscn
-res://scripts/Art.gd
 res://scripts/custom_classes.gd
 res://scripts/editor.gd
 res://scripts/edittext.gd

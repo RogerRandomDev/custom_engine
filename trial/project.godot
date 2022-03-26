@@ -34,6 +34,8 @@ custom="*res://scripts/custom_classes.gd"
 [debug]
 
 settings/fps/force_fps=20
+gdscript/warnings/enable=false
+shader_language/warnings/enable=false
 
 [display]
 

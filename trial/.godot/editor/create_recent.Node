@@ -1,9 +1,10 @@
+Window
+Node2D
+Button
+Panel
 TextEdit
 LineEdit
 Control
-Node2D
 Node
-Button
 CodeEdit
 ItemList
-Panel

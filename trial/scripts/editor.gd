@@ -8,3 +8,9 @@ func _ready():
 func _process(_delta):
 	if $scriptholder.has_method("_process"):
 		$scriptholder.call("_process",_delta)
+
+var last_tab=0
+
+func force_change_tab(tab):
+	last_tab=tab
+	$TabContainer.current_tab=tab

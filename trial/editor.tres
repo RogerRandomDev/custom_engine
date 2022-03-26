@@ -1,0 +1,27 @@
+[gd_resource type="CodeHighlighter" format=3 uid="uid://c6snqmeewopwy"]
+
+[resource]
+number_color = Color(0.670588, 0.321569, 0.211765, 1)
+symbol_color = Color(1, 1, 1, 1)
+function_color = Color(0, 0.647059, 1, 1)
+member_variable_color = Color(0, 0.647059, 1, 1)
+keyword_colors = {
+"bool": Color(1, 0.466667, 0.658824, 1),
+"const": Color(0.494118, 0.145098, 0.32549, 1),
+"float": Color(1, 0.466667, 0.658824, 1),
+"fn": Color(1, 0, 0.301961, 1),
+"for": Color(1, 0, 0.301961, 1),
+"func": Color(1, 0, 0.301961, 1),
+"if": Color(1, 0, 0.301961, 1),
+"in": Color(1, 0, 0.301961, 1),
+"int": Color(1, 0, 0.301961, 1),
+"null": Color(1, 0, 0.301961, 1),
+"pass": Color(1, 0, 0.301961, 1),
+"str": Color(1, 0.466667, 0.658824, 1),
+"string": Color(1, 0.466667, 0.658824, 1),
+"var": Color(0.494118, 0.145098, 0.32549, 1),
+"while": Color(1, 0, 0.301961, 1)
+}
+color_regions = {
+"#": Color(0.760784, 0.764706, 0.780392, 1)
+}
