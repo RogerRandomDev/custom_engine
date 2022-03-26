@@ -57,7 +57,6 @@ func _notification(what):
 #should be used to check if it is valid
 func check_valid_script(list):
 	var funcs = list
-	var a=Script.new()
 	#should check if both customs and node don't have the functions in them
 	print(list.get_script_method_list())
 
